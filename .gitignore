@@ -1,0 +1,6 @@
+.env
+.env.local
+backend/.env
+frontend/.env
+frontend/playwright-report/
+frontend/test-results/
