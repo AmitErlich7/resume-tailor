@@ -13,11 +13,11 @@ An AI-powered resume tailoring web app. Users sign in with Google or LinkedIn, b
 | Frontend | React (Vite), Clerk for auth |
 | Backend | Python, FastAPI (async) |
 | Database | MongoDB Atlas via Motor |
-| AI | Anthropic `claude-opus-4-6` |
+| AI | Anthropic `claude-sonnet-4-6` |
 | GitHub import | PyGithub |
 | Export | python-docx (DOCX), reportlab (PDF) |
 | Frontend hosting | Vercel |
-| Backend hosting | Render |
+| Backend hosting | AWS |
 
 ---
 
@@ -191,7 +191,6 @@ resume-tailor/
 ├── backend/
 │   ├── main.py                  FastAPI app, CORS, lifespan
 │   ├── requirements.txt
-│   ├── .env.example
 │   ├── routers/
 │   │   ├── auth.py              POST /auth/sync
 │   │   ├── profile.py           GET/POST/PATCH /profile
@@ -232,5 +231,5 @@ resume-tailor/
     │   │   └── api.js           All fetch calls + auth headers
     │   └── hooks/
     │       └── useProfile.js    Profile fetch + reload hook
-    └── .env.example
+    └── 
 ```
