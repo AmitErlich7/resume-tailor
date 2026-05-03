@@ -23,9 +23,6 @@ def _init_firebase() -> None:
     firebase_admin.initialize_app(cred)
 
 
-_init_firebase()
-
-
 async def get_current_user(
     credentials: HTTPAuthorizationCredentials = Depends(_bearer_scheme),
 ) -> str:
@@ -33,6 +30,7 @@ async def get_current_user(
     FastAPI dependency. Verifies the Firebase ID token and returns the
     Firebase UID (the 'uid' claim). Raises 401 if the token is missing or invalid.
     """
+    _init_firebase()
     token = credentials.credentials
     try:
         decoded = firebase_auth.verify_id_token(token)

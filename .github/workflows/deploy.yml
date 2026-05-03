@@ -45,13 +45,8 @@ jobs:
             --region ${{ env.REGION }} \
             --platform managed \
             --allow-unauthenticated \
-            --set-env-vars "\
-          ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }},\
-          MONGODB_URI=${{ secrets.MONGODB_URI }},\
-          GITHUB_CLIENT_ID=${{ secrets.GITHUB_CLIENT_ID }},\
-          GITHUB_CLIENT_SECRET=${{ secrets.GITHUB_CLIENT_SECRET }},\
-          ENVIRONMENT=production,\
-          FRONTEND_URL=https://cvtechtailor.web.app"
+            --service-account gcpservice@${{ env.PROJECT_ID }}.iam.gserviceaccount.com \
+            --set-env-vars "ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }},MONGODB_URI=${{ secrets.MONGODB_URI }},GITHUB_CLIENT_ID=${{ secrets.GITHUB_CLIENT_ID }},GITHUB_CLIENT_SECRET=${{ secrets.GITHUB_CLIENT_SECRET }},ENVIRONMENT=production,FRONTEND_URL=https://cvtechtailor.web.app"
 
   # ---------------------------------------------------------------------------
   # Frontend → Firebase Hosting
