@@ -8,7 +8,7 @@ env:
   PROJECT_ID: cvtechtailor
   REGION: us-central1
   SERVICE: resume-tailor-api
-  GAR_REPO: resume-tailor
+  GAR_REPO: CVTechTailor
 
 jobs:
   # ---------------------------------------------------------------------------
