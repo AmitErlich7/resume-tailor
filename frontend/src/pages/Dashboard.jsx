@@ -174,7 +174,6 @@ function EmptyState({ onCta }) {
       </div>
       <p style={s.emptyTitle}>Your first tailored resume starts here</p>
       <p style={s.emptyHint}>Paste a job description and get an AI-matched resume in minutes.</p>
-      <button style={s.primaryBtn} onClick={onCta}>Tailor a resume</button>
     </div>
   )
 }
